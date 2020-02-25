@@ -4,7 +4,6 @@ import SingleCast from './SingleCast.jsx';
 import SingleCrew from './SingleCrew.jsx';
 import './CastCrewTabs.css';
 
-//This component was created in relation/reference to: https://codepen.io/t7team/pen/ZowdRN
 //This function will open the tab depending on what is clicked
 function openTab(evt, tabName) {
     var i, x, tablinks;
@@ -20,6 +19,7 @@ function openTab(evt, tabName) {
     evt.currentTarget.className += " is-active";
 }
 
+//This component was created in relation/reference to: https://codepen.io/t7team/pen/ZowdRN
 class CastCrewTabs extends React.Component {  
     render() {
         return (

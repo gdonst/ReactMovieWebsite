@@ -1,0 +1,16 @@
+.list-transition-enter, .list-transition-appear {
+/*We give the list the initial dimension of the list button*/
+top: 0;
+width: 120px;
+max-height: 40px;
+color: transparent;
+background-color: #5a564c;
+}
+/* This is where we can add the transition*/
+.list-transition-enter-active, .list-transition-appear-active {
+top: 45px;
+width: 200px;
+max-height: 200px;
+background-color: #9e8949;
+transition: all 400ms;
+}

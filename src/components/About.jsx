@@ -67,7 +67,8 @@ class About extends React.Component {
                     >
                     <div>
                         <div>Website Author: Grant Donst</div>
-                        <div>Github Link: </div>
+                        <div><a href="https://github.com/gdonst/ReactMovieWebsite" target="_blank" rel="noopener noreferrer">Github Repository</a></div>
+                        <br/>
                         <div>Technology/Resources Used: </div>
                         <ul>
                             <li>React</li>

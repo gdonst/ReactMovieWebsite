@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from 'react-router-dom';
 import imgUrl from '../photos/peter-lewicki-Wfh650C1OHU-unsplash.jpg';
 import './Home.css';
-import CSSTransitionGroup from 'react-transition-group/CSSTransitionGroup';
 
 //This component is the home page that the user will see upon website visit, or clicking the website logo
 class Home extends React.Component {

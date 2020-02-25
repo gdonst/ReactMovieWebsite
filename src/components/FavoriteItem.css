@@ -1,5 +1,6 @@
 figure {
     position: relative;
+    margin: 5px;
 }
 
 .delete {
@@ -14,8 +15,4 @@ figure:hover .delete {
     position: absolute;
     top: 5px;
     right: 5px;
-}
-
-figure {
-    margin: 5px;
 }
