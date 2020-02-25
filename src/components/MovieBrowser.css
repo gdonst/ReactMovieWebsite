@@ -1,0 +1,13 @@
+#movieList {
+    overflow: scroll;
+    height: 800px;
+}
+
+#filterList {
+    height: 800px;
+}
+
+#rightArrow {
+  line-height: 800px;
+  text-align: center;
+}

@@ -1,0 +1,13 @@
+.arrowPointerFilter {
+    float: right;
+}
+.arrowPointerFilter i {
+    cursor: pointer;
+}
+#filterList {
+    height: 800px;
+}
+
+.input {
+    margin: 2px;
+}

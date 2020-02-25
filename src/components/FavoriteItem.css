@@ -1,0 +1,21 @@
+figure {
+    position: relative;
+}
+
+.delete {
+    display: none;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+figure:hover .delete {
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+figure {
+    margin: 5px;
+}
