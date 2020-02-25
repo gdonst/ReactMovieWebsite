@@ -17,22 +17,13 @@ class App extends React.Component {
 
     //get initial data and save to local storage, or get from local storage if it already exists
     async componentDidMount() {
-        this._isMounted = true;
         let moviesLocalStorage = null;
-        try {
-            moviesLocalStorage = JSON.parse(localStorage.getItem('movieList'));
-            this.setState( {movies: moviesLocalStorage, dataLoaded: true, movies_unfiltered: moviesLocalStorage} );
-        }
-        catch(err) {
-            console.log(err);
-        }
 
         if(moviesLocalStorage == null){
             try {
                 const url = "https://www.randyconnolly.com/funwebdev/3rd/api/movie/movies-brief.php?id=ALL";
                 const response = await fetch(url);
                 const jsonData = await response.json();
-                console.log("Movie Data fetched");
                 //https://www.c-sharpcorner.com/UploadFile/fc34aa/sort-json-object-array-based-on-a-key-attribute-in-javascrip/
                 jsonData.sort(function(a, b) {  
                     if (a.title > b.title) {  
@@ -48,6 +39,15 @@ class App extends React.Component {
             }
             catch (error) {
                 console.error(error);
+            }
+        }
+        else{
+            try {
+                moviesLocalStorage = JSON.parse(localStorage.getItem('movieList'));
+                this.setState( {movies: moviesLocalStorage, dataLoaded: true, movies_unfiltered: moviesLocalStorage} );
+            }
+            catch(err) {
+                console.log(err);
             }
         }
     }
@@ -113,12 +113,12 @@ class App extends React.Component {
             return 0;  
             })
         }
-        this.setState( {movies: updatedList, dataLoaded: true} );
+        this.setState( {movies: updatedList} );
     }
 
     //reset all filters
     resetFilters = () => {
-        this.setState( {movies: this.state.movies_unfiltered, dataLoaded: true} );
+        this.setState( {movies: this.state.movies_unfiltered} );
     }
 
     //filter specifically for the home page search box, this function was base off: https://codepen.io/mtclmn/pen/QyPVJp
@@ -130,7 +130,7 @@ class App extends React.Component {
             searchBox.toLowerCase()) !== -1;
         });
         
-        this.setState( {movies: updatedList, dataLoaded: true} );
+        this.setState( {movies: updatedList} );
     }
     
     //applies any filters that were requested by the user
@@ -185,7 +185,7 @@ class App extends React.Component {
             });
         }
         
-        this.setState( {movies: updatedList, dataLoaded: true} );
+        this.setState( {movies: updatedList} );
     }
 
     //adds a movie to favorites
