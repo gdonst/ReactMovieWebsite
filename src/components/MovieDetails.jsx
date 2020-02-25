@@ -9,6 +9,23 @@ import AverageRating from './AverageRating.jsx';
 //This component is the movie details plus the cast and crew component
 class MovieDetails extends React.Component {
 
+    //This function is from: https://stackoverflow.com/questions/149055/how-to-format-numbers-as-currency-string
+    formatMoney = (amount, decimalCount = 2, decimal = ".", thousands = ",") => {
+        try {
+            decimalCount = Math.abs(decimalCount);
+            decimalCount = isNaN(decimalCount) ? 2 : decimalCount;
+
+            const negativeSign = amount < 0 ? "-" : "";
+
+            let i = parseInt(amount = Math.abs(Number(amount) || 0).toFixed(decimalCount)).toString();
+            let j = (i.length > 3) ? i.length % 3 : 0;
+
+            return negativeSign + (j ? i.substr(0, j) + thousands : '') + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thousands) + (decimalCount ? decimal + Math.abs(amount - i).toFixed(decimalCount).slice(2) : "");
+        } catch (e) {
+            console.log(e)
+        }
+    };
+
     render() {
         console.log("movie: " + this.props.movie);
         const imdb = `https://www.imdb.com/title/${this.props.movie.imdb_id}`;
@@ -33,8 +50,8 @@ class MovieDetails extends React.Component {
                                     <h1 className="title is-5">Info</h1>
                                     <ul className="list">
                                         <li className="list-item">Release Date: {this.props.movie.release_date}</li>
-                                        <li className="list-item">Revenue: {this.props.movie.revenue}</li>
-                                        <li className="list-item">Runtime: {this.props.movie.runtime}</li>
+                                        <li className="list-item">Revenue: ${this.formatMoney(this.props.movie.revenue)}</li>
+                                        <li className="list-item">Runtime: {this.props.movie.runtime} minutes</li>
                                         <li className="list-item">Tagline: {this.props.movie.tagline}</li>
                                     </ul>
                                 </div>

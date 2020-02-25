@@ -92,6 +92,7 @@ class About extends React.Component {
                             <li><a href="https://codepen.io/Laumak/pen/pRJzGL" target="_blank" rel="noopener noreferrer">Modal Design</a></li>
                             <li><a href="https://codepen.io/mtclmn/pen/QyPVJp" target="_blank" rel="noopener noreferrer">Search Sorting Function</a></li>
                             <li><a href="http://stackoverflow.com/questions/16491758/remove-objects-from-array-by-object-property" target="_blank" rel="noopener noreferrer">Removing Object from Array</a></li>
+                            <li><a href="https://stackoverflow.com/questions/149055/how-to-format-numbers-as-currency-string" target="_blank" rel="noopener noreferrer">Money format</a></li>
                         </ul>
                     </div>
                 </Modal>

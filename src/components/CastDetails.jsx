@@ -35,6 +35,7 @@ class CastDetails extends React.Component {
                         <div id="castDetailsBox" className="tile is-child notification is-light columns">
                             <div className="title is-4 has-text-left-desktop column">
                                 {this.props.cast.name}
+                                <br/>
                                 <img alt="cast image" src={imgURL} />
                             </div>
                             <div className="column is-8">
